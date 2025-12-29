@@ -1,0 +1,5 @@
+# Editores e IDEs
+.vscode
+
+# Binários
+*out

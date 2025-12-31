@@ -26,7 +26,7 @@ void countChars(ifstream& file, unordered_map<char, int>& chars) {
     short tab = 0;
     while (file.get(c)) {
         if (!(c == ' ')) {
-            chars[' '] += tab;
+            if (chars.find(' ') != chars.end()) chars[' '] += tab;
             tab = 0;
 
             chars[c]++;

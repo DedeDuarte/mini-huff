@@ -13,7 +13,7 @@ void QuickSort::quick_rec(vector<pair<char, int>>& nums, int start, int end) {
     int sw = start-1;               // Swap
 
     for (int i = start; i < end; i++)
-        if (nums[i].second >= pv && ++sw < i) swap(nums[i], nums[sw]);
+        if (nums[i].second <= pv && ++sw < i) swap(nums[i], nums[sw]);
 
     quick_rec(nums, start, sw);
     quick_rec(nums, sw+1, end);
@@ -28,7 +28,7 @@ void runQuick(vector<pair<char, int>>& nums) {
 bool isOrdered(const vector<pair<char, int>>& nums) {
     int nums_size = nums.size();
     for (int i = 0; i < nums_size-1; i++)
-        if (nums[i].second < nums[i+1].second) return false;
+        if (nums[i].second > nums[i+1].second) return false;
     return true;
 }
 
